@@ -17,6 +17,8 @@
     [super viewDidLoad];
     
     //커밋 테스트
+    //테스트2
+    
     // Do any additional setup after loading the view.
 }
 
