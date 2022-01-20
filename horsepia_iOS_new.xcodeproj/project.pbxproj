@@ -14,6 +14,7 @@
 		28C2FF6727913ACF00F4D6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */; };
 		28C2FF6A27913ACF00F4D6D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */; };
 		28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6C27913ACF00F4D6D2 /* main.m */; };
+		28C2FF872798002000F4D6D2 /* ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF862798002000F4D6D2 /* ScanController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		28C2FF6927913ACF00F4D6D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28C2FF6B27913ACF00F4D6D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C2FF6C27913ACF00F4D6D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28C2FF852798002000F4D6D2 /* ScanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanController.h; sourceTree = "<group>"; };
+		28C2FF862798002000F4D6D2 /* ScanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +64,19 @@
 		28C2FF5927913ACD00F4D6D2 /* horsepia_iOS_new */ = {
 			isa = PBXGroup;
 			children = (
+				28C2FF852798002000F4D6D2 /* ScanController.h */,
+				28C2FF862798002000F4D6D2 /* ScanController.m */,
 				28C2FF5A27913ACD00F4D6D2 /* AppDelegate.h */,
 				28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */,
+				28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */,
+				28C2FF6B27913ACF00F4D6D2 /* Info.plist */,
+				28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */,
+				28C2FF6C27913ACF00F4D6D2 /* main.m */,
+				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
 				28C2FF5D27913ACD00F4D6D2 /* SceneDelegate.h */,
 				28C2FF5E27913ACD00F4D6D2 /* SceneDelegate.m */,
 				28C2FF6027913ACD00F4D6D2 /* ViewController.h */,
 				28C2FF6127913ACD00F4D6D2 /* ViewController.m */,
-				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
-				28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */,
-				28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */,
-				28C2FF6B27913ACF00F4D6D2 /* Info.plist */,
-				28C2FF6C27913ACF00F4D6D2 /* main.m */,
 			);
 			path = horsepia_iOS_new;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28C2FF872798002000F4D6D2 /* ScanController.m in Sources */,
 				28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */,
 				28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */,
 				28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */,

@@ -17,7 +17,6 @@
 
 
 @property (nonatomic, strong) NSString *baseUrl;
- 
 
 @end
 
@@ -27,18 +26,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _baseUrl = @"https://www.horsepia.com"; //운영
-    //_baseUrl = @"m.kra.co.kr";
-    //_baseUrl = @"http://www.devhorespia.intra.kra.co.kr"; //개발
+    
+    _baseUrl = @"http://devhorsepia.intra.kra.co.kr"; //개발
+    //_baseUrl = @"https://www.horsepia.com"; //운영
     
     
-    
-
+    /*
     self.wkWebView = [[WKWebView alloc] initWithFrame:self.view.frame];
        [self.view addSubview:self.wkWebView];
        
        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_baseUrl]];
        [self.wkWebView loadRequest:request];
+    
+    */
 }
 
 
@@ -46,4 +46,8 @@
    
 }
 
+
+
+- (IBAction)pageBtn:(id)sender {
+}
 @end

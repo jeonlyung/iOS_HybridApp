@@ -12,5 +12,8 @@
 @property (nonatomic, strong) NSString *pageUrl;
 @property (nonatomic, strong) NSString *menuValue;
 
+
+- (IBAction)pageBtn:(id)sender;
+
 @end
 
