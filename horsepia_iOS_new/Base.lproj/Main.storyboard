@@ -16,23 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEL-pg-U8B">
-                                <rect key="frame" x="50" y="36" width="314" height="398"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="페이지 전환 성공" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwG-37-KDZ">
-                                <rect key="frame" x="145" y="506" width="124" height="52"/>
+                                <rect key="frame" x="145" y="561" width="124" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4O-MR-dFP">
+                                <rect key="frame" x="145" y="656" width="124" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="startButton:" destination="FQJ-ME-Ep1" eventType="touchUpInside" id="NET-dL-CLe"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEL-pg-U8B">
+                                <rect key="frame" x="50" y="46" width="314" height="398"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ey4-gP-FuC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="RrY-gy-OUq"/>
+                    <connections>
+                        <outlet property="labelStatus" destination="vwG-37-KDZ" id="D6F-DP-fMi"/>
+                        <outlet property="viewPreview" destination="ZEL-pg-U8B" id="cWK-s5-nFP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pyd-oi-D8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,8 +65,6 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="pageBtn:" destination="NNb-hk-Zxi" eventType="touchUpInside" id="RYE-sP-mdG"/>
-                                    <action selector="pageBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="op8-SD-r8Z"/>
                                     <segue destination="FQJ-ME-Ep1" kind="show" id="fUx-fK-gdG"/>
                                 </connections>
                             </button>
@@ -61,13 +72,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <connections>
-                        <outlet property="pageBtn" destination="5SM-Rp-b3V" id="Jcr-VS-2sy"/>
-                        <outlet property="pageSwap" destination="5SM-Rp-b3V" id="0lc-9b-EvB"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <exit id="NNb-hk-Zxi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="80.357142857142847"/>
         </scene>

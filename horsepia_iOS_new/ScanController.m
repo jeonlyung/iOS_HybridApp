@@ -19,20 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _isReading = NO;
+    _isReading = YES;
     _captureSession = nil;
 }
 
 
 - (IBAction)startStopReading:(id)sender {
+  
+}
+
+- (IBAction)startButton:(id)sender {
     if(!_isReading) {
         if([self startReading]){
             [_labelStatus setText:@"QR를 네모 안에 맞춰주세요."];
-            [_startButton setTitle:@"촬영 중지"];
+            
         }
     } else {
         [self stopReading];
-        [_startButton setTitle:@"촬영 시작"];
+    
     }
     _isReading = !_isReading;
 }
@@ -72,9 +76,6 @@
     return YES;
 }
 
-- (IBAction)closeButton:(id)sender {
-    [_startButton setTitle:@"테스트중"];
-}
 
 - (void)stopReading {
     [_captureSession stopRunning];
@@ -94,11 +95,12 @@
             [_labelStatus performSelectorOnMainThread:@selector(setText:) withObject:[metadataObject stringValue] waitUntilDone:NO];
             
             [self performSelectorOnMainThread:@selector(stopReading) withObject:nil waitUntilDone:NO];
-            [_startButton performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
+            //[_startButton performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             _isReading = NO;
             
         }
     }
 }
+
 
 @end

@@ -13,9 +13,6 @@
 
 @interface ScanController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIView *viewPreview;
-@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
 
 @property (nonatomic) BOOL isReading;
     
@@ -24,11 +21,9 @@
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;
 
 
-@property (nonatomic, strong) WKWebView *wkWebView;
-@property (weak, nonatomic) IBOutlet UIView *uiWebView;
-
-
-- (IBAction)closeButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *viewPreview;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
+- (IBAction)startButton:(id)sender;
 
 - (BOOL)startReading;
 @end

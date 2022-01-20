@@ -46,8 +46,4 @@
    
 }
 
-
-
-- (IBAction)pageBtn:(id)sender {
-}
 @end
