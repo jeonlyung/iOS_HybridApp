@@ -303,6 +303,7 @@
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = horsepia_iOS_new/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,6 +331,7 @@
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = horsepia_iOS_new/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

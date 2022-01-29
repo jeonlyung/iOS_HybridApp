@@ -14,17 +14,15 @@
 @interface ScanController : UIViewController
 
 
-@property (nonatomic) BOOL isReading;
-    
-@property (nonatomic, strong) AVCaptureSession *captureSession;
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewPlayer;
-@property (nonatomic,strong) AVAudioPlayer *audioPlayer;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
-
-@property (weak, nonatomic) IBOutlet UIView *viewPreview;
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
+
+
 - (IBAction)startButton:(id)sender;
 
 - (BOOL)startReading;
+
+
 @end
 

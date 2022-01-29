@@ -10,7 +10,15 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface ScanController ()
+@interface ScanController () <AVCaptureMetadataOutputObjectsDelegate>
+
+@property (nonatomic) BOOL isReading;
+
+@property (nonatomic, strong) AVCaptureSession *captureSession;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewPlayer;
+@property (nonatomic,strong) AVAudioPlayer *audioPlayer;
+@property (weak, nonatomic) IBOutlet UIView *viewPreview;
+
 @end
 
 
@@ -21,26 +29,29 @@
     // Do any additional setup after loading the view.
     _isReading = YES;
     _captureSession = nil;
+
 }
 
-
-- (IBAction)startStopReading:(id)sender {
-  
-}
 
 - (IBAction)startButton:(id)sender {
-    if(!_isReading) {
+    
+    if(_isReading) {
         if([self startReading]){
-            [_labelStatus setText:@"QR를 네모 안에 맞춰주세요."];
+            [_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];
+            [_startButton setTitle:@"스캔 중지" forState:UIControlStateHighlighted];
             
         }
     } else {
         [self stopReading];
-    
+        [_labelStatus setText:@"스캔 시작 버튼을 눌러주세요."];
+        [_startButton setTitle:@"스캔 시작" forState:UIControlStateHighlighted];
     }
     _isReading = !_isReading;
+
+    
 }
- 
+
+
 - (BOOL)startReading {
     NSError *error;
     
@@ -57,6 +68,7 @@
     
     AVCaptureMetadataOutput *capturedMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
     [_captureSession addOutput:capturedMetadataOutput];
+    
     
     dispatch_queue_t dispatchQueue;
     dispatchQueue = dispatch_queue_create("myQueue", NULL);
@@ -83,7 +95,9 @@
     
     [_videoPreviewPlayer removeFromSuperlayer];
 }
-    
+ 
+
+//QR Scan 이후 결과 콜백 함수
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     
     if (metadataObjects != nil && metadataObjects.count > 0) {
