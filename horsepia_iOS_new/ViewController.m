@@ -15,7 +15,7 @@
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (weak, nonatomic) IBOutlet UIView *uiWebView;
 @property (nonatomic, strong) NSString *baseUrl;
-@property (nonatomic, assign, getter=isWorking) BOOL devBoolean;
+@property (nonatomic, assign, getter=isWorking) BOOL localBoolean;
 //웹뷰 컨테이너
 @property (strong, nonatomic) IBOutlet UIView *webViewContainer;
 
@@ -33,41 +33,39 @@ WKUserContentController *jsctrl;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _devBoolean = YES; //개발:YES, 운영:NO
+    _localBoolean = YES; //개발:YES, 운영:NO
     
-    if(_devBoolean){//local 파일 불러오기
-        NSURL *url = [[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"];
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
+    config = [[WKWebViewConfiguration alloc]init];
+    jsctrl = [[WKUserContentController alloc]init];
+    
+    // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가해줍니다.
+    // 본 글에서는 핸들러 및 프로토콜을 ioscall로 통일합니다.
+    [jsctrl addScriptMessageHandler:self name:@"goScanQR"];
+    // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
+    [config setUserContentController:jsctrl];
+       
+    // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.
+    [self.wkWebView setUIDelegate:self];
+    [self.wkWebView setNavigationDelegate:self];
+       
+    CGRect frame = [[UIScreen mainScreen]bounds];
+    // WkWebView는 IBOutlet으로 제공되지 않아 스토리보드에서 추가할 수 없습니다.
+    // 웹뷰의 크기를 정해준 후 초기화하고 본 ViewController의 뷰에 추가합니다.
+
+    self.wkWebView = [[WKWebView alloc] initWithFrame:frame configuration:config];
+    [self.wkWebView setNavigationDelegate:self];
+    [self.view addSubview:self.wkWebView];
+    
+    if(_localBoolean){//local 파일 불러오기
+        NSString* productURL = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:productURL]];
         [self.wkWebView loadRequest:request];
         
-    }else{
+    }else{//
+        
         _baseUrl = @"http://devhorsepia.intra.kra.co.kr"; //호스피아 개발
         //_baseUrl = @"https://www.horsepia.com"; //호스피아 운영
-
-        // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
-        config = [[WKWebViewConfiguration alloc]init];
-        jsctrl = [[WKUserContentController alloc]init];
-           
-        // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가해줍니다.
-        // 본 글에서는 핸들러 및 프로토콜을 ioscall로 통일합니다.
-        [jsctrl addScriptMessageHandler:self name:@"goScanQR"];
-        // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
-        [config setUserContentController:jsctrl];
-           
-        // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.
-        [self.wkWebView setUIDelegate:self];
-        [self.wkWebView setNavigationDelegate:self];
-           
-        CGRect frame = [[UIScreen mainScreen]bounds];
-        
-        
-        // WkWebView는 IBOutlet으로 제공되지 않아 스토리보드에서 추가할 수 없습니다.
-        // 웹뷰의 크기를 정해준 후 초기화하고 본 ViewController의 뷰에 추가합니다.
-
-        self.wkWebView = [[WKWebView alloc] initWithFrame:frame configuration:config];
-        [self.wkWebView setNavigationDelegate:self];
-        [self.view addSubview:self.wkWebView];
-        
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_baseUrl]];
         [self.wkWebView loadRequest:request];
     }
