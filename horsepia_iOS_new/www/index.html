@@ -13,10 +13,6 @@
 <script type="text/javascript" charset="utf-8">
 
 
-    	function init(){
-    		console.log("init !!!");
-        }
-
 
 
         function externalBrowser(){
@@ -26,14 +22,19 @@
 
         }
 
-
+        function goScanQR(){
+            console.log("goScanQR Start");
+            var data = "test";
+            window.webkit.messageHandlers.goScanQR.postMessage(data);
+            console.log("data : " + data);
+        }
 
 	</script>
 
 
 </head>
 
-<body onload="init()" background="">
+<body onload="" background="">
 
 	<div id="_index" data-role="page">
 		<div data-role="header" data-theme="a">
@@ -46,7 +47,7 @@
 				<button class="btn">SQLITE 테스트</button>
 			</form>
 			<br/>
-			<button class="btn" onclick="ScanQR()">ScanQR</button>
+			<button class="btn" onclick="goScanQR()">ScanQR</button>
             <br/>
 			<br/>
             <input type="text" id="idVal" placeholder="아이디">

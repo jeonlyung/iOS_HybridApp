@@ -8,6 +8,7 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 #import <UIKit/UIKit.h>
+#import "ScanController.h"
 
 
 @interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler>
@@ -87,6 +88,26 @@ WKUserContentController *jsctrl;
         NSLog(@"goScanQR !");
         NSString *str = [message body];
         NSLog(@"%%@ : %@", str);
+        
+        /*
+        //1차 시도(Navigation View 호출) --> 실패
+        ScanController *scanController = [ScanController new];
+        [self.navigationController pushViewController:scanController animated:YES];
+        */
+        
+        /*
+         //2차시도(seque)
+        [self performSegueWithIdentifier:@"ScanController" sender:self];
+        */
+        
+        //3차시도(View 띄우기) --> 에러
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:[NSBundle mainBundle]];
+        UIViewController *navi = [storyboard instantiateViewControllerWithIdentifier:@"ScanController"];
+        [self presentViewController:navi animated:true completion:nil];
+        
+        
+        
+        
     }
 }
 

@@ -11,7 +11,7 @@
         <!--Scan Controller-->
         <scene sceneID="sBF-pO-87y">
             <objects>
-                <viewController id="FQJ-ME-Ep1" customClass="ScanController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScanController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FQJ-ME-Ep1" customClass="ScanController" customModule="horsepia_iOS_new" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LT2-Co-HKW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
