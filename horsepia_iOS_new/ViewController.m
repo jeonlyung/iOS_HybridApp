@@ -9,9 +9,10 @@
 #import <WebKit/WebKit.h>
 #import <UIKit/UIKit.h>
 #import "ScanController.h"
+#import "ViewClass/ScanViewController.h"
 
 
-@interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler>
+@interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler, UIWebViewDelegate>
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (weak, nonatomic) IBOutlet UIView *uiWebView;
@@ -87,7 +88,7 @@ WKUserContentController *jsctrl;
     } else if([message.name isEqualToString:@"goScanQR"]){
         NSLog(@"goScanQR !");
         NSString *str = [message body];
-        NSLog(@"%%@ : %@", str);
+        NSLog(@"str : %@", str);
         
         /*
         //1차 시도(Navigation View 호출) --> 실패
@@ -101,17 +102,21 @@ WKUserContentController *jsctrl;
         */
         
         
-        //3차시도(View 띄우기) --> 에러
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:[NSBundle mainBundle]];
+        /*
+        //3차시도(View 띄우기) --> 스토리보드 에러 발생(원인파악 어려움) / 개별 뷰 호출 방식으로 변경
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *navi = [storyboard instantiateViewControllerWithIdentifier:@"ScanController"];
         [self presentViewController:navi animated:true completion:nil];
+        */
         
+        //개별 뷰 호출 방식
+        ScanViewController *sv = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
         
-        
-        
+        [sv setModalTransitionStyle: UIModalTransitionStyleFlipHorizontal];
+        [self presentViewController:sv animated:YES completion:nil];
+
     }
 }
-
 
 
 //WKNavigationDelegate

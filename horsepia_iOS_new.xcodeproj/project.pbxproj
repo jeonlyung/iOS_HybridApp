@@ -16,6 +16,8 @@
 		28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6C27913ACF00F4D6D2 /* main.m */; };
 		28C2FF872798002000F4D6D2 /* ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF862798002000F4D6D2 /* ScanController.m */; };
 		28C2FF9127B506D900F4D6D2 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF9027B506D900F4D6D2 /* www */; };
+		28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */; };
+		28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,9 @@
 		28C2FF852798002000F4D6D2 /* ScanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanController.h; sourceTree = "<group>"; };
 		28C2FF862798002000F4D6D2 /* ScanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanController.m; sourceTree = "<group>"; };
 		28C2FF9027B506D900F4D6D2 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		28C2FFA127BCC35500F4D6D2 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
+		28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
+		28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +80,24 @@
 				28C2FF6B27913ACF00F4D6D2 /* Info.plist */,
 				28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */,
 				28C2FF6C27913ACF00F4D6D2 /* main.m */,
-				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
 				28C2FF5D27913ACD00F4D6D2 /* SceneDelegate.h */,
 				28C2FF5E27913ACD00F4D6D2 /* SceneDelegate.m */,
 				28C2FF6027913ACD00F4D6D2 /* ViewController.h */,
 				28C2FF6127913ACD00F4D6D2 /* ViewController.m */,
+				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
+				28C2FFA027BCC32A00F4D6D2 /* ViewClass */,
 			);
 			path = horsepia_iOS_new;
+			sourceTree = "<group>";
+		};
+		28C2FFA027BCC32A00F4D6D2 /* ViewClass */ = {
+			isa = PBXGroup;
+			children = (
+				28C2FFA127BCC35500F4D6D2 /* ScanViewController.h */,
+				28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */,
+				28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */,
+			);
+			path = ViewClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +160,7 @@
 				28C2FF9127B506D900F4D6D2 /* www in Resources */,
 				28C2FF6A27913ACF00F4D6D2 /* LaunchScreen.storyboard in Resources */,
 				28C2FF6727913ACF00F4D6D2 /* Assets.xcassets in Resources */,
+				28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */,
 				28C2FF6527913ACD00F4D6D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28C2FF872798002000F4D6D2 /* ScanController.m in Sources */,
+				28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */,
 				28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */,
 				28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */,
 				28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */,

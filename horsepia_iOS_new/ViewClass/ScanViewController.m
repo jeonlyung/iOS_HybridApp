@@ -1,16 +1,13 @@
 //
-//  ViewController.m
+//  ScanViewController.m
 //  horsepia_iOS_new
 //
-//  Created by 한국마사회 on 2022/01/14.
+//  Created by 한국마사회 on 2022/02/16.
 //
 
-#import "ScanController.h"
-#import <WebKit/WebKit.h>
+#import "ScanViewController.h"
 
-#import <AVFoundation/AVFoundation.h>
-
-@interface ScanController () <AVCaptureMetadataOutputObjectsDelegate, UITableViewDelegate>
+@interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 
 @property (nonatomic) BOOL isReading;
 
@@ -21,20 +18,28 @@
 
 @end
 
-
-@implementation ScanController
+@implementation ScanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view from its nib.
     _isReading = YES;
     _captureSession = nil;
-
+    
+    if(_isReading) {
+        if([self startReading]){
+            [_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];
+            //[_startButton setTitle:@"스캔 중지" forState:UIControlStateHighlighted];
+            
+        }
+    }
 }
 
 
+
+
+
 - (IBAction)startButton:(id)sender {
-    
     if(_isReading) {
         if([self startReading]){
             [_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];
@@ -48,9 +53,7 @@
     }
     _isReading = !_isReading;
 
-    
 }
-
 
 - (BOOL)startReading {
     NSError *error;
@@ -100,6 +103,14 @@
 //QR Scan 이후 결과 콜백 함수
 - (void)captureOutput:(AVCaptureOutput *)output didOutputMetadataObjects:(NSArray<__kindof AVMetadataObject *> *)metadataObjects fromConnection:(AVCaptureConnection *)connection {
     
+    /*
+    if (self.navigationController) {
+       [self.navigationController popViewControllerAnimated:YES];
+     } else {
+       [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+     }
+     
+     */
     if (metadataObjects != nil && metadataObjects.count > 0) {
         
         AVMetadataMachineReadableCodeObject *metadataObject = [metadataObjects objectAtIndex:0];
@@ -114,7 +125,7 @@
             
         }
     }
+     
 }
-
 
 @end
