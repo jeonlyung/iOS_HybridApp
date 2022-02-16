@@ -100,6 +100,7 @@ WKUserContentController *jsctrl;
         [self performSegueWithIdentifier:@"ScanController" sender:self];
         */
         
+        
         //3차시도(View 띄우기) --> 에러
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main.storyboard" bundle:[NSBundle mainBundle]];
         UIViewController *navi = [storyboard instantiateViewControllerWithIdentifier:@"ScanController"];
