@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIView *uiWebView;
 @property (nonatomic, strong) NSString *baseUrl;
 @property (nonatomic, assign, getter=isWorking) BOOL localBoolean;
-//웹뷰 컨테이너
-@property (strong, nonatomic) IBOutlet UIView *webViewContainer;
 
 @end
 
@@ -34,7 +32,6 @@ WKUserContentController *jsctrl;
    
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _localBoolean = YES; //개발:YES, 운영:NO
     
     // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
@@ -62,14 +59,15 @@ WKUserContentController *jsctrl;
     if(_localBoolean){//local 파일 불러오기
         NSString* productURL = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:productURL]];
+        _wkWebView.UIDelegate = self;
         [self.wkWebView loadRequest:request];
         
-    }else{//
-        
+    }else{
         _baseUrl = @"http://devhorsepia.intra.kra.co.kr"; //호스피아 개발
         //_baseUrl = @"https://www.horsepia.com"; //호스피아 운영
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:_baseUrl]];
         [self.wkWebView loadRequest:request];
+    
     }
   
 }
@@ -111,9 +109,21 @@ WKUserContentController *jsctrl;
         
         //개별 뷰 호출 방식
         ScanViewController *sv = [[ScanViewController alloc] initWithNibName:@"ScanViewController" bundle:nil];
-        
         [sv setModalTransitionStyle: UIModalTransitionStyleFlipHorizontal];
-        [self presentViewController:sv animated:YES completion:nil];
+        
+        //callback함수 셋팅
+        sv.callback = ^(NSString *result) {
+            NSLog(@"callback Result : %@", result);
+            NSString *javaScript = [NSString stringWithFormat:@"ScanSuccessCallback('%@');", result];
+            [self.wkWebView evaluateJavaScript:javaScript completionHandler:^(NSString *result, NSError *error)
+            {
+                NSLog(@"javaScript : %@", javaScript);
+            }];
+        };
+        
+        sv.modalPresentationStyle = UIModalPresentationFullScreen;
+   
+        [self presentViewController:sv animated:NO completion:nil];
 
     }
 }
@@ -132,5 +142,16 @@ WKUserContentController *jsctrl;
     NSLog(@"3. didFailNavigation");
 }
  
+
+//javscript alert호출 안됨(밑에 추가해줘야 가능)
+//WkWebView alert창 Custom
+- (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message
+        initiatedByFrame:(WKFrameInfo *)frame
+        completionHandler:(void (^)(void))completionHandler {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림" message:message preferredStyle:UIAlertControllerStyleAlert]; [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) { completionHandler(); }]]; [self presentViewController:alertController animated:YES completion:^{}];
+    
+}
+
+
 
 @end

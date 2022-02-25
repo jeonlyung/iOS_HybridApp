@@ -6,6 +6,7 @@
 //
 
 #import "ScanViewController.h"
+#import "../ViewController.h"
 
 @interface ScanViewController () <AVCaptureMetadataOutputObjectsDelegate>
 
@@ -15,6 +16,9 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *videoPreviewPlayer;
 @property (nonatomic,strong) AVAudioPlayer *audioPlayer;
 @property (weak, nonatomic) IBOutlet UIView *viewPreview;
+
+
+@property (nonatomic, strong) WKWebView *wkWebView;
 
 @end
 
@@ -123,6 +127,27 @@
             //[_startButton performSelectorOnMainThread:@selector(setTitle:) withObject:@"Start!" waitUntilDone:NO];
             _isReading = NO;
             
+            
+            //Main Thread Error 해결(2022-02-23)
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"QR Scan Success");
+                //Main View 콜백함수 호출
+                self.callback([metadataObject stringValue]);
+                //SubViewContorller 닫기
+                [self dismissViewControllerAnimated:NO completion:nil];
+                
+                /*
+                //스토리보드 뷰 호출 방식
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                ViewController *vc = [storyboard instantiateInitialViewController];
+                vc.modalPresentationStyle = UIModalPresentationFullScreen;
+                
+                vc.QRresultValue = [metadataObject stringValue];
+                //ScanSuccessCallback() 성공 콜백함수
+                [self presentViewController:vc animated:NO completion:nil];
+                */
+                
+            });
         }
     }
      

@@ -12,5 +12,9 @@
 @property (nonatomic, strong) NSString *pageUrl;
 @property (nonatomic, strong) NSString *menuValue;
 
+
+
+@property (nonatomic, strong) NSString *QRresultValue;
+
 @end
 
