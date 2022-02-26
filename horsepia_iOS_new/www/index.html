@@ -26,7 +26,6 @@
             console.log("goScanQR Start");
             var data = "test";
             window.webkit.messageHandlers.goScanQR.postMessage(data);
-            console.log("data : " + data);
         }
 
     
@@ -47,8 +46,16 @@
         }
       
         function windowOpenTest(){
+            console.log("window.open Start");
             //location.href = "https://www.naver.com";
             window.open("https://www.naver.com");
+        }
+        
+        function openSafari(){
+            console.log("openSafari Start");
+            var data = "test";
+            window.webkit.messageHandlers.openSafari.postMessage(data);
+            
         }
 	</script>
 
@@ -97,6 +104,10 @@
             <br/>
             <button class="btn" onclick="windowOpenTest()">window.open 테스트</button>
             <br/>
+            <br/>
+            <button class="btn" onclick="openSafari()">openSafari 테스트</button>
+            <br/>
+            
             <br/>
 
 		</div>

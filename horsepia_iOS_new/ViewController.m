@@ -41,6 +41,8 @@ WKUserContentController *jsctrl;
     // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가해줍니다.
     // 본 글에서는 핸들러 및 프로토콜을 ioscall로 통일합니다.
     [jsctrl addScriptMessageHandler:self name:@"goScanQR"];
+    [jsctrl addScriptMessageHandler:self name:@"openSafari"];
+
     // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
     [config setUserContentController:jsctrl];
        
@@ -74,7 +76,7 @@ WKUserContentController *jsctrl;
 
 
 // WKScriptMessageHandler에 의해 생성된 delegate 함수입니다.
-// 자바스크립트에서 ios에 wekkit핸들러를 통해 함수 호출시
+// 자바스크립트에서 ios에 wekkit핸들러를 통해 함수 호출시(함수에 파라미터 있어야됨)!
 //메세지의 name 과 body로 구분해서 어떤 js 함수에서 호출했는지와 데이터를 가져온다.
 - (void)userContentController:(WKUserContentController *)userContentController
         didReceiveScriptMessage:(WKScriptMessage *)message{
@@ -125,6 +127,18 @@ WKUserContentController *jsctrl;
    
         [self presentViewController:sv animated:NO completion:nil];
 
+    } else if([message.name isEqualToString:@"openSafari"]){
+        NSLog(@"openGoogle Navtive Call Success");
+
+        
+        UIApplication *application = [UIApplication sharedApplication];
+        NSURL *URL = [NSURL URLWithString:@"http://www.google.com"];
+        [application openURL:URL options:@{} completionHandler:^(BOOL success) {
+            if (success) {
+                 NSLog(@"Opened url");
+            }
+        }];
+        
     }
 }
 
@@ -193,6 +207,7 @@ WKUserContentController *jsctrl;
 
 }
 
+//WkWebView window.open 새창 열기 이벤트 감지
 -(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
     if (!navigationAction.targetFrame.isMainFrame) {
         if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
