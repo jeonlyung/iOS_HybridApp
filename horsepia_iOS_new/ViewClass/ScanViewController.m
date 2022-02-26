@@ -46,14 +46,14 @@
 - (IBAction)startButton:(id)sender {
     if(_isReading) {
         if([self startReading]){
-            [_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];
-            [_startButton setTitle:@"스캔 중지" forState:UIControlStateHighlighted];
+            //[_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];
+           // [_startButton setTitle:@"스캔 중지" forState:UIControlStateHighlighted];
             
         }
     } else {
         [self stopReading];
-        [_labelStatus setText:@"스캔 시작 버튼을 눌러주세요."];
-        [_startButton setTitle:@"스캔 시작" forState:UIControlStateHighlighted];
+        //[_labelStatus setText:@"스캔 시작 버튼을 눌러주세요."];
+       // [_startButton setTitle:@"스캔 시작" forState:UIControlStateHighlighted];
     }
     _isReading = !_isReading;
 

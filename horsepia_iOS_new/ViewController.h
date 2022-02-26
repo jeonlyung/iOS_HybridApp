@@ -14,7 +14,5 @@
 
 
 
-@property (nonatomic, strong) NSString *QRresultValue;
-
 @end
 

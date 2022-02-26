@@ -33,7 +33,7 @@ WKUserContentController *jsctrl;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _localBoolean = YES; //개발:YES, 운영:NO
-    
+
     // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
     config = [[WKWebViewConfiguration alloc]init];
     jsctrl = [[WKUserContentController alloc]init];
@@ -114,7 +114,7 @@ WKUserContentController *jsctrl;
         //callback함수 셋팅
         sv.callback = ^(NSString *result) {
             NSLog(@"callback Result : %@", result);
-            NSString *javaScript = [NSString stringWithFormat:@"ScanSuccessCallback('%@');", result];
+            NSString *javaScript = [NSString stringWithFormat:@"SuccessScanQR('%@');", result];
             [self.wkWebView evaluateJavaScript:javaScript completionHandler:^(NSString *result, NSError *error)
             {
                 NSLog(@"javaScript : %@", javaScript);
@@ -144,14 +144,61 @@ WKUserContentController *jsctrl;
  
 
 //javscript alert호출 안됨(밑에 추가해줘야 가능)
-//WkWebView alert창 Custom
+//WkWebView Alert Custom
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message
         initiatedByFrame:(WKFrameInfo *)frame
         completionHandler:(void (^)(void))completionHandler {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림" message:message preferredStyle:UIAlertControllerStyleAlert]; [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) { completionHandler(); }]]; [self presentViewController:alertController animated:YES completion:^{}];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림" message:message preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) { completionHandler();
+            }]];
+            [self presentViewController:alertController animated:YES completion:^{}];
+    
+}
+//WkWebView Confirm Custom
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message
+        initiatedByFrame:(WKFrameInfo *)frame
+        completionHandler:(void (^)(BOOL result))completionHandler {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"알림" message:message preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                completionHandler(YES);
+            }]];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                completionHandler(NO);
+            }]];
+            [self presentViewController:alertController animated:YES completion:nil];
+
     
 }
 
+//WkWebView Prompt Custom
+- (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt
+        defaultText:(nullable NSString *)defaultText
+        initiatedByFrame:(WKFrameInfo *)frame
+        completionHandler:(void (^)(NSString * __nullable result))completionHandler {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:prompt message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                textField.text = defaultText;
+            }];
 
+            [alertController addAction:[UIAlertAction actionWithTitle:@"확인" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                NSString *input = ((UITextField *)alertController.textFields.firstObject).text;
+                completionHandler(input);
+            }]];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                completionHandler(nil);
+            }]];
 
+            [self presentViewController:alertController animated:YES completion:nil];
+
+}
+
+-(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (!navigationAction.targetFrame.isMainFrame) {
+        if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
+            NSLog(@"window.open 실행");
+        }
+    }
+    return nil;
+}
 @end

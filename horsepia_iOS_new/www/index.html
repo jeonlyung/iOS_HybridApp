@@ -12,7 +12,7 @@
 
 
         function init(){
-            alert("test");
+            //alert("test");
         }
 
         function externalBrowser(){
@@ -31,13 +31,25 @@
 
     
     
-        function ScanSuccessCallback(data){
+        //Scanner Success Callback함수
+        function SuccessScanQR(data){
             console.log("javascript 통신 성공");
             console.log("SuccessCallback(data) : " + data);
             alert("data : " + data);
         }
     
+        
+        function alertTest(){
+            alert("테스트 중입니다.");
+        }
+        function confirmTest(){
+            confirm("테스트 하시겠습니까?");
+        }
       
+        function windowOpenTest(){
+            //location.href = "https://www.naver.com";
+            window.open("https://www.naver.com");
+        }
 	</script>
 
 
@@ -75,6 +87,15 @@
             <br/>
             <br/>
             <button class="btn" onclick="cleartData()">데이터 삭제</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="alertTest()">Alert 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="confirmTest()">Confirm 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="windowOpenTest()">window.open 테스트</button>
             <br/>
             <br/>
 
