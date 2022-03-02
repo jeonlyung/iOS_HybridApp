@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28C2FF5727913ACD00F4D6D2 /* horsepia_iOS_new.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = horsepia_iOS_new.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C2FF5727913ACD00F4D6D2 /* QR-Code_Obectjve-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-Code_Obectjve-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C2FF5A27913ACD00F4D6D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		28C2FF5D27913ACD00F4D6D2 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 		28C2FF4E27913ACD00F4D6D2 = {
 			isa = PBXGroup;
 			children = (
-				28C2FF5927913ACD00F4D6D2 /* horsepia_iOS_new */,
+				28C2FF5927913ACD00F4D6D2 /* QR-Code-Objective-C */,
 				28C2FF5827913ACD00F4D6D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,12 +63,12 @@
 		28C2FF5827913ACD00F4D6D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28C2FF5727913ACD00F4D6D2 /* horsepia_iOS_new.app */,
+				28C2FF5727913ACD00F4D6D2 /* QR-Code_Obectjve-C.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		28C2FF5927913ACD00F4D6D2 /* horsepia_iOS_new */ = {
+		28C2FF5927913ACD00F4D6D2 /* QR-Code-Objective-C */ = {
 			isa = PBXGroup;
 			children = (
 				28C2FF9027B506D900F4D6D2 /* www */,
@@ -87,7 +87,8 @@
 				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
 				28C2FFA027BCC32A00F4D6D2 /* ViewClass */,
 			);
-			path = horsepia_iOS_new;
+			name = "QR-Code-Objective-C";
+			path = "QR-Code_Obectjve-C";
 			sourceTree = "<group>";
 		};
 		28C2FFA027BCC32A00F4D6D2 /* ViewClass */ = {
@@ -103,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28C2FF5627913ACD00F4D6D2 /* horsepia_iOS_new */ = {
+		28C2FF5627913ACD00F4D6D2 /* QR-Code_Obectjve-C */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "horsepia_iOS_new" */;
+			buildConfigurationList = 28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "QR-Code_Obectjve-C" */;
 			buildPhases = (
 				28C2FF5327913ACD00F4D6D2 /* Sources */,
 				28C2FF5427913ACD00F4D6D2 /* Frameworks */,
@@ -115,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = horsepia_iOS_new;
+			name = "QR-Code_Obectjve-C";
 			productName = horsepia_iOS_new;
-			productReference = 28C2FF5727913ACD00F4D6D2 /* horsepia_iOS_new.app */;
+			productReference = 28C2FF5727913ACD00F4D6D2 /* QR-Code_Obectjve-C.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "horsepia_iOS_new" */;
+			buildConfigurationList = 28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "QR-Code_Obectjve-C" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -147,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28C2FF5627913ACD00F4D6D2 /* horsepia_iOS_new */,
+				28C2FF5627913ACD00F4D6D2 /* QR-Code_Obectjve-C */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +325,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = horsepia_iOS_new/Info.plist;
+				INFOPLIST_FILE = "QR-Code_Obectjve-C/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -336,7 +337,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.horsepia-iOS-new";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QR-Code-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -352,7 +353,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = horsepia_iOS_new/Info.plist;
+				INFOPLIST_FILE = "QR-Code_Obectjve-C/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -364,7 +365,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.horsepia-iOS-new";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.QR-Code-Objective-C";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "horsepia_iOS_new" */ = {
+		28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "QR-Code_Obectjve-C" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28C2FF6E27913ACF00F4D6D2 /* Debug */,
@@ -383,7 +384,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "horsepia_iOS_new" */ = {
+		28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "QR-Code_Obectjve-C" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28C2FF7127913ACF00F4D6D2 /* Debug */,
