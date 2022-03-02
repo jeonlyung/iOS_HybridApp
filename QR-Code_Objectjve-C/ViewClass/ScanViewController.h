@@ -1,6 +1,6 @@
 //
 //  ScanViewController.h
-//  horsepia_iOS_new
+//  
 //
 //  Created by 한국마사회 on 2022/02/16.
 //

@@ -1,6 +1,6 @@
 //
 //  WindowOpenViewController.m
-//  QR-Code_Objectjve-C
+//  WindowOpen View 화면
 //
 //  Created by 한국마사회 on 2022/03/02.
 //
