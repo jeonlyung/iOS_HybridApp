@@ -209,6 +209,8 @@ WKUserContentController *jsctrl;
 
 //WkWebView window.open 새창 열기 이벤트 감지
 -(WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    
+    
     if (!navigationAction.targetFrame.isMainFrame) {
         if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
             NSLog(@"window.open 실행");
