@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "28C2FF5627913ACD00F4D6D2"
-               BuildableName = "QR-Code_Obectjve-C.app"
-               BlueprintName = "QR-Code_Obectjve-C"
-               ReferencedContainer = "container:QR-Code_Obectjve-C.xcodeproj">
+               BuildableName = "QR-Code_Objectjve-C.app"
+               BlueprintName = "QR-Code_Objectjve-C"
+               ReferencedContainer = "container:QR-Code_Objectjve-C.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "28C2FF5627913ACD00F4D6D2"
-            BuildableName = "QR-Code_Obectjve-C.app"
-            BlueprintName = "QR-Code_Obectjve-C"
-            ReferencedContainer = "container:QR-Code_Obectjve-C.xcodeproj">
+            BuildableName = "QR-Code_Objectjve-C.app"
+            BlueprintName = "QR-Code_Objectjve-C"
+            ReferencedContainer = "container:QR-Code_Objectjve-C.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "28C2FF5627913ACD00F4D6D2"
-            BuildableName = "QR-Code_Obectjve-C.app"
-            BlueprintName = "QR-Code_Obectjve-C"
-            ReferencedContainer = "container:QR-Code_Obectjve-C.xcodeproj">
+            BuildableName = "QR-Code_Objectjve-C.app"
+            BlueprintName = "QR-Code_Objectjve-C"
+            ReferencedContainer = "container:QR-Code_Objectjve-C.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
