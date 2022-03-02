@@ -14,7 +14,6 @@
 		28C2FF6727913ACF00F4D6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */; };
 		28C2FF6A27913ACF00F4D6D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */; };
 		28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6C27913ACF00F4D6D2 /* main.m */; };
-		28C2FF872798002000F4D6D2 /* ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF862798002000F4D6D2 /* ScanController.m */; };
 		28C2FF9127B506D900F4D6D2 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF9027B506D900F4D6D2 /* www */; };
 		28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */; };
 		28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */; };
@@ -35,8 +34,6 @@
 		28C2FF6927913ACF00F4D6D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28C2FF6B27913ACF00F4D6D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28C2FF6C27913ACF00F4D6D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		28C2FF852798002000F4D6D2 /* ScanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanController.h; sourceTree = "<group>"; };
-		28C2FF862798002000F4D6D2 /* ScanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanController.m; sourceTree = "<group>"; };
 		28C2FF9027B506D900F4D6D2 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 		28C2FFA127BCC35500F4D6D2 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
@@ -77,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				28C2FF9027B506D900F4D6D2 /* www */,
-				28C2FF852798002000F4D6D2 /* ScanController.h */,
-				28C2FF862798002000F4D6D2 /* ScanController.m */,
 				28C2FF5A27913ACD00F4D6D2 /* AppDelegate.h */,
 				28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */,
 				28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */,
@@ -182,7 +177,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C2FF872798002000F4D6D2 /* ScanController.m in Sources */,
 				28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */,
 				28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */,
 				28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */,

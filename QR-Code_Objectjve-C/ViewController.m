@@ -8,7 +8,6 @@
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 #import <UIKit/UIKit.h>
-#import "ScanController.h"
 #import "ViewClass/ScanViewController.h"
 #import "ViewClass/WindowOpenViewController.h"
 
