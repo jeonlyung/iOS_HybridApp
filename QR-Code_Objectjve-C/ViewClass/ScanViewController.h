@@ -17,10 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *labelStatus;
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+
 
 @property (nonatomic, copy) void (^callback)(NSString *result);
 
 - (IBAction)startButton:(id)sender;
+
+- (IBAction)closeButton:(id)sender;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -153,4 +153,9 @@
      
 }
 
+//닫기 버튼 추가
+- (IBAction)closeButton:(id)sender {
+    //SubViewContorller 닫기
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 @end
