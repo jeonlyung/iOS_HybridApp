@@ -18,6 +18,8 @@
 		28C2FF9127B506D900F4D6D2 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF9027B506D900F4D6D2 /* www */; };
 		28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */; };
 		28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */; };
+		28C2FFF427CF594B00F4D6D2 /* WindowOpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFF227CF594B00F4D6D2 /* WindowOpenViewController.m */; };
+		28C2FFF527CF594B00F4D6D2 /* WindowOpenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFF327CF594B00F4D6D2 /* WindowOpenViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		28C2FFA127BCC35500F4D6D2 /* ScanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
 		28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanViewController.m; sourceTree = "<group>"; };
 		28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanViewController.xib; sourceTree = "<group>"; };
+		28C2FFF127CF594B00F4D6D2 /* WindowOpenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowOpenViewController.h; sourceTree = "<group>"; };
+		28C2FFF227CF594B00F4D6D2 /* WindowOpenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowOpenViewController.m; sourceTree = "<group>"; };
+		28C2FFF327CF594B00F4D6D2 /* WindowOpenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WindowOpenViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,9 @@
 				28C2FFA127BCC35500F4D6D2 /* ScanViewController.h */,
 				28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */,
 				28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */,
+				28C2FFF127CF594B00F4D6D2 /* WindowOpenViewController.h */,
+				28C2FFF227CF594B00F4D6D2 /* WindowOpenViewController.m */,
+				28C2FFF327CF594B00F4D6D2 /* WindowOpenViewController.xib */,
 			);
 			path = ViewClass;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 				28C2FF6A27913ACF00F4D6D2 /* LaunchScreen.storyboard in Resources */,
 				28C2FF6727913ACF00F4D6D2 /* Assets.xcassets in Resources */,
 				28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */,
+				28C2FFF527CF594B00F4D6D2 /* WindowOpenViewController.xib in Resources */,
 				28C2FF6527913ACD00F4D6D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +186,7 @@
 				28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */,
 				28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */,
 				28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */,
+				28C2FFF427CF594B00F4D6D2 /* WindowOpenViewController.m in Sources */,
 				28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */,
 				28C2FF5F27913ACD00F4D6D2 /* SceneDelegate.m in Sources */,
 			);

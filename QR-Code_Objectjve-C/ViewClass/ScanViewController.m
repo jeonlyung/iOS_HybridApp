@@ -30,6 +30,12 @@
     _isReading = YES;
     _captureSession = nil;
     
+    //닫기버튼 이미지로 변경
+    UIImage *closeBtnImage = [UIImage imageNamed:@"btn_close"];
+    [_closeButton setImage:closeBtnImage forState:UIControlStateNormal];
+    [_closeButton setTitle:@" " forState:UIControlStateNormal];
+    
+    
     if(_isReading) {
         if([self startReading]){
             [_labelStatus setText:@"QR를 화면 안에 맞춰주세요."];

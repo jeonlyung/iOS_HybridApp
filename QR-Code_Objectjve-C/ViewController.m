@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "ScanController.h"
 #import "ViewClass/ScanViewController.h"
+#import "ViewClass/WindowOpenViewController.h"
 
 
 @interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler, UIWebViewDelegate>
@@ -38,8 +39,7 @@ WKUserContentController *jsctrl;
     config = [[WKWebViewConfiguration alloc]init];
     jsctrl = [[WKUserContentController alloc]init];
     
-    // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가해줍니다.
-    // 본 글에서는 핸들러 및 프로토콜을 ioscall로 통일합니다.
+    // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가
     [jsctrl addScriptMessageHandler:self name:@"goScanQR"];
     [jsctrl addScriptMessageHandler:self name:@"openSafari"];
 
@@ -87,7 +87,7 @@ WKUserContentController *jsctrl;
         NSLog(@"test !");
     } else if([message.name isEqualToString:@"goScanQR"]){
         NSLog(@"goScanQR !");
-        NSString *str = [message body];
+        NSString *str = [message body]; //넘어온 데이터 : [message body]
         NSLog(@"str : %@", str);
         
         /*
@@ -103,7 +103,8 @@ WKUserContentController *jsctrl;
         
         
         /*
-        //3차시도(View 띄우기) --> 스토리보드 에러 발생(원인파악 어려움) / 개별 뷰 호출 방식으로 변경
+        //3차시도(View 띄우기) --> 스토리보드 에러 발생 --> Main thread 에 비동기식 Thread[dispatch_async(dispatch_get_main_queue(), ^{});] 접근 추가 해줘야 가능
+        // 개별 뷰 호출 방식으로 변경
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         UIViewController *navi = [storyboard instantiateViewControllerWithIdentifier:@"ScanController"];
         [self presentViewController:navi animated:true completion:nil];
@@ -124,7 +125,6 @@ WKUserContentController *jsctrl;
         };
         
         sv.modalPresentationStyle = UIModalPresentationFullScreen;
-   
         [self presentViewController:sv animated:NO completion:nil];
 
     } else if([message.name isEqualToString:@"openSafari"]){
@@ -213,7 +213,14 @@ WKUserContentController *jsctrl;
     
     if (!navigationAction.targetFrame.isMainFrame) {
         if ([[UIApplication sharedApplication] canOpenURL:navigationAction.request.URL]) {
-            NSLog(@"window.open 실행");
+            NSLog(@"window.open URL : %@", navigationAction.request.URL);
+            
+            //개별 뷰 호출 방식
+            WindowOpenViewController *ov = [[WindowOpenViewController alloc] initWithNibName:@"WindowOpenViewController" bundle:nil];
+            [ov setModalTransitionStyle: UIModalTransitionStyleFlipHorizontal];
+            ov.requestURL = navigationAction.request.URL;
+            [self presentViewController:ov animated:NO completion:nil];
+
         }
     }
     return nil;
