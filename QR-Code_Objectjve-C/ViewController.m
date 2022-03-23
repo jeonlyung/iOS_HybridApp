@@ -32,7 +32,7 @@ WKUserContentController *jsctrl;
    
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _localBoolean = NO; //개발:YES, 운영:NO
+    _localBoolean = YES; //개발:YES, 운영:NO
 
     // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
     config = [[WKWebViewConfiguration alloc]init];
@@ -45,6 +45,16 @@ WKUserContentController *jsctrl;
     // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
     [config setUserContentController:jsctrl];
        
+   
+    //userAgent 세팅 2022-03-23
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    userAgent = [NSString stringWithFormat:@"%@HORSEPIA_iOS", userAgent];
+    NSDictionary *dic =@{@"UserAgent": [NSString stringWithFormat:@"%@", userAgent]};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dic];
+    
+
+
     // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.
     [self.wkWebView setUIDelegate:self];
     [self.wkWebView setNavigationDelegate:self];

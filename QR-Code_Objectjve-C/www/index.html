@@ -57,6 +57,37 @@
             
         }
     
+    
+    
+        function fnLink(url){
+
+            var userAgent = navigator.userAgent.toLocaleLowerCase();
+
+            var browser = "";
+
+            if(userAgent.indexOf('horsepia_ios')>0){
+                browser = "IOS";
+            }
+            else if(userAgent.indexOf('horsepia_aos')>0){
+                browser = "AOS";
+            }
+
+            if(browser == "AOS"){
+
+                var arry = [url];
+                window.android.externalBrowser(arry);
+            }
+            else if(browser == "IOS"){
+                alert("test");
+                window.open("https://m.kra.co.kr","_blank");
+            }
+            else {
+                
+                window.open(url,"_blank");
+            }
+        }
+
+
 	</script>
 
 
@@ -106,6 +137,9 @@
             <br/>
             <br/>
             <button class="btn" onclick="openSafari()">openSafari 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="fnLink('test')">호스피아 개발 테스트</button>
             <br/>
             
             <br/>
