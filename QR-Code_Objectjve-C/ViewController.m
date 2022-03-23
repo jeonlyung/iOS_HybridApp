@@ -32,7 +32,7 @@ WKUserContentController *jsctrl;
    
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _localBoolean = YES; //개발:YES, 운영:NO
+    _localBoolean = NO; //개발:YES, 운영:NO
 
     // WkWebViewConfiguration과 WKUserContentController를 초기화해줍니다.
     config = [[WKWebViewConfiguration alloc]init];
