@@ -59,8 +59,9 @@ WKUserContentController *jsctrl;
     
     if(_localBoolean){//local 파일 불러오기
         NSString* productURL = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
+        NSLog(@"productURL : %@", productURL);
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:productURL]];
-        _wkWebView.UIDelegate = self;
+
         [self.wkWebView loadRequest:request];
         
     }else{
