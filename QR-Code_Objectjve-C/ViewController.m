@@ -44,32 +44,21 @@ WKUserContentController *jsctrl;
 
     // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
     [config setUserContentController:jsctrl];
-       
-   
-    //userAgent 세팅 2022-03-23
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
-    NSString *userAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-    userAgent = [NSString stringWithFormat:@"%@HORSEPIA_iOS", userAgent];
-    NSDictionary *dic =@{@"UserAgent": [NSString stringWithFormat:@"%@", userAgent]};
-    [[NSUserDefaults standardUserDefaults] registerDefaults:dic];
-    
 
-
-    // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.
-    [self.wkWebView setUIDelegate:self];
-    [self.wkWebView setNavigationDelegate:self];
        
     CGRect frame = [[UIScreen mainScreen]bounds];
     // WkWebView는 IBOutlet으로 제공되지 않아 스토리보드에서 추가할 수 없습니다.
     // 웹뷰의 크기를 정해준 후 초기화하고 본 ViewController의 뷰에 추가합니다.
 
     self.wkWebView = [[WKWebView alloc] initWithFrame:frame configuration:config];
+    
+    // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.(webView 선언 후에 초기화 시켜줘야됨!)
+    [self.wkWebView setUIDelegate:self];
     [self.wkWebView setNavigationDelegate:self];
     [self.view addSubview:self.wkWebView];
     
     if(_localBoolean){//local 파일 불러오기
         NSString* productURL = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"www/index.html"];
-        NSLog(@"productURL : %@", productURL);
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:productURL]];
 
         [self.wkWebView loadRequest:request];
