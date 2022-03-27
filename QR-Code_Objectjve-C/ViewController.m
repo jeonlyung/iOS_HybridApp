@@ -52,6 +52,16 @@ WKUserContentController *jsctrl;
 
     self.wkWebView = [[WKWebView alloc] initWithFrame:frame configuration:config];
     
+    //userAgent Custom
+    NSString *userAgent = [_wkWebView valueForKey:@"userAgent"];
+    NSLog(@"userAgent : %@", userAgent);
+    userAgent = [NSString stringWithFormat:@"%@QR_Code_Scanner", userAgent];
+    NSDictionary *dic =@{@"UserAgent": [NSString stringWithFormat:@"%@", userAgent]};
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dic];
+    self.wkWebView.customUserAgent = userAgent;
+    
+    
+    
     // 웹뷰의 딜리게이트들을 새로 초기화해줍니다.(webView 선언 후에 초기화 시켜줘야됨!)
     [self.wkWebView setUIDelegate:self];
     [self.wkWebView setNavigationDelegate:self];
