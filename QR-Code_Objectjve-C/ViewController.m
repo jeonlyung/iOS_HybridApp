@@ -54,8 +54,9 @@ WKUserContentController *jsctrl;
     
     //userAgent Custom
     NSString *userAgent = [_wkWebView valueForKey:@"userAgent"];
-    NSLog(@"userAgent : %@", userAgent);
     userAgent = [NSString stringWithFormat:@"%@QR_Code_Scanner", userAgent];
+    NSLog(@"userAgent : %@", userAgent);
+    
     NSDictionary *dic =@{@"UserAgent": [NSString stringWithFormat:@"%@", userAgent]};
     [[NSUserDefaults standardUserDefaults] registerDefaults:dic];
     self.wkWebView.customUserAgent = userAgent;
