@@ -1,10 +1,3 @@
-//
-//  ViewController.m
-//  horsepia_iOS_new
-//
-//  Created by 한국마사회 on 2022/01/14.
-//
-
 #import "ViewController.h"
 #import <WebKit/WebKit.h>
 #import <UIKit/UIKit.h>

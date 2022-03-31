@@ -330,7 +330,7 @@
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QR-Code_Objectjve-C/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 기능을 사용하기 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -358,7 +358,7 @@
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "QR-Code_Objectjve-C/Info.plist";
-				INFOPLIST_KEY_NSCameraUsageDescription = "This app will need camera permission to use your phone camera";
+				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 기능을 사용하기 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
