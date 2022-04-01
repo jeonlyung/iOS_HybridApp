@@ -138,6 +138,7 @@ WKUserContentController *jsctrl;
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL] options:@{} completionHandler:nil];
 
     }else if([message.name isEqualToString:@"webViewSafari"]){//앱 내에서 사파리 브라우저로 호출하기
+        //외부 브라우저로 호출할경우 앱스토어 배포시 리젝 당함(SFSafriViewController 사용)
         NSLog(@"webViewSafari Navtive Call Success");
         NSURL *url = [message body];
         NSLog(@"webViewSafari : %@", url);
