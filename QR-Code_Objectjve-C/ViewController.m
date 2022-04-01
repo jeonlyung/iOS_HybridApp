@@ -3,9 +3,9 @@
 #import <UIKit/UIKit.h>
 #import "ViewClass/ScanViewController.h"
 #import "ViewClass/WindowOpenViewController.h"
+#import "SafariServices/SafariServices.h"
 
-
-@interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler, UIWebViewDelegate>
+@interface ViewController ()<WKUIDelegate , WKNavigationDelegate , WKScriptMessageHandler, UIWebViewDelegate, SFSafariViewControllerDelegate>
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (weak, nonatomic) IBOutlet UIView *uiWebView;
@@ -34,7 +34,7 @@ WKUserContentController *jsctrl;
     // 자바스크립트 -> ios에 사용될 핸들러 이름을 추가
     [jsctrl addScriptMessageHandler:self name:@"goScanQR"];
     [jsctrl addScriptMessageHandler:self name:@"openSafari"];
-
+    [jsctrl addScriptMessageHandler:self name:@"webViewSafari"];
     // WkWebView의 configuration에 스크립트에 대한 설정을 정해줍니다.
     [config setUserContentController:jsctrl];
 
@@ -130,18 +130,21 @@ WKUserContentController *jsctrl;
         sv.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:sv animated:NO completion:nil];
 
-    } else if([message.name isEqualToString:@"openSafari"]){
-        NSLog(@"openGoogle Navtive Call Success");
+    } else if([message.name isEqualToString:@"openSafari"]){//앱 외부에서 사파리 브라우저로 호출하기
+        NSLog(@"openSafari Navtive Call Success");
+        NSURL *URL = [message body];
+        NSLog(@"ExternalURL : %@", URL);
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL] options:@{} completionHandler:nil];
 
-        
-        UIApplication *application = [UIApplication sharedApplication];
-        NSURL *URL = [NSURL URLWithString:@"http://www.google.com"];
-        [application openURL:URL options:@{} completionHandler:^(BOOL success) {
-            if (success) {
-                 NSLog(@"Opened url");
-            }
-        }];
-        
+    }else if([message.name isEqualToString:@"webViewSafari"]){//앱 내에서 사파리 브라우저로 호출하기
+        NSLog(@"webViewSafari Navtive Call Success");
+        NSURL *url = [message body];
+        NSLog(@"webViewSafari : %@", url);
+
+        SFSafariViewController *svc = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+        svc.delegate = self;
+        [self presentViewController:svc animated:YES completion:nil];
     }
 }
 

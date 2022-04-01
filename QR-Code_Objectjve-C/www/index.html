@@ -53,11 +53,16 @@
         
         function openSafari(){
             console.log("openSafari Start");
-            var data = "test";
-            window.webkit.messageHandlers.openSafari.postMessage(data);
+            var url = "https:/www.naver.com";
+            window.webkit.messageHandlers.openSafari.postMessage(url);
             
         }
     
+        function webViewSafari(){
+            console.log("webViewSafari Start");
+            var url = "https://m.kra.co.kr";
+            window.webkit.messageHandlers.webViewSafari.postMessage(url);
+        }
 	</script>
 
 
@@ -67,7 +72,7 @@
 
 	<div id="_index" data-role="page">
 		<div data-role="header" data-theme="a">
-			<h1>한국마사회 샘플 테스트 앱</h1>
+			<h1>HSJ 샘플 내부페이지 테스트 앱</h1>
 		</div>
 
 		<div data-role="content">
@@ -107,6 +112,9 @@
             <br/>
             <br/>
             <button class="btn" onclick="openSafari()">openSafari 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="webViewSafari()">webViewSafari 테스트</button>
             <br/>
 		</div>
 
