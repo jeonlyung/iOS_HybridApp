@@ -134,6 +134,8 @@ WKUserContentController *jsctrl;
         NSLog(@"openSafari Navtive Call Success");
         NSURL *URL = [message body];
         NSLog(@"ExternalURL : %@", URL);
+        //URL = [URL absoluteString];
+        
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URL] options:@{} completionHandler:nil];
 
