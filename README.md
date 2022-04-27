@@ -8,10 +8,13 @@ QR Code Scanner기능을 사용가능한 iOS앱
   - Ex) 출석체크, 입장인원 관리 등
 
 
-4. 프로젝트 사용 언어 및 툴
-  - 사용 언어 : Objective-C
-  - 사용 툴 및 버전 Xcode  : Version 13.3 (13E113)
-                    Mac OS : macOS Monterey 12.3
+2. 프로젝트 사용 언어 및 툴
+  <사용 언어>
+     - Objective-C
+  <사용 툴 및 버전> 
+     - Xcode  : Version 13.3 (13E113)
+     - Mac OS : macOS Monterey 12.3
+                    
     
-5. 저작권, 라이선스 정보
-6. 외부 리소스 정보
+3. 저작권, 라이선스 정보
+4. 외부 리소스 정보
