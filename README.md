@@ -9,9 +9,9 @@ QR Code Scanner기능을 사용가능한 iOS앱
 
 
 2. 프로젝트 사용 언어 및 툴
-<사용 언어>
+[<사용 언어]
 - Objective-C
-<사용 툴 및 버전> 
+[사용 툴 및 버전]
 - Xcode  : Version 13.3 (13E113)
 - Mac OS : macOS Monterey 12.3
                     
