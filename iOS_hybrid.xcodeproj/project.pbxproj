@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */; };
-		28C2FF5F27913ACD00F4D6D2 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF5E27913ACD00F4D6D2 /* SceneDelegate.m */; };
-		28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6127913ACD00F4D6D2 /* ViewController.m */; };
+		284F0C342824E5AB00CFAEE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */; };
+		284F0C352824E5AB00CFAEE3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF5E27913ACD00F4D6D2 /* SceneDelegate.m */; };
+		284F0C362824E5AB00CFAEE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6127913ACD00F4D6D2 /* ViewController.m */; };
+		284F0C372824E5AB00CFAEE3 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */; };
+		284F0C382824E5AB00CFAEE3 /* WindowOpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFF227CF594B00F4D6D2 /* WindowOpenViewController.m */; };
+		284F0C3A2824F41D00CFAEE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6C27913ACF00F4D6D2 /* main.m */; };
 		28C2FF6527913ACD00F4D6D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6327913ACD00F4D6D2 /* Main.storyboard */; };
 		28C2FF6727913ACF00F4D6D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6627913ACF00F4D6D2 /* Assets.xcassets */; };
 		28C2FF6A27913ACF00F4D6D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF6827913ACF00F4D6D2 /* LaunchScreen.storyboard */; };
-		28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FF6C27913ACF00F4D6D2 /* main.m */; };
 		28C2FF9127B506D900F4D6D2 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FF9027B506D900F4D6D2 /* www */; };
-		28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFA227BCC35500F4D6D2 /* ScanViewController.m */; };
 		28C2FFA527BCC35500F4D6D2 /* ScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFA327BCC35500F4D6D2 /* ScanViewController.xib */; };
-		28C2FFF427CF594B00F4D6D2 /* WindowOpenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C2FFF227CF594B00F4D6D2 /* WindowOpenViewController.m */; };
 		28C2FFF527CF594B00F4D6D2 /* WindowOpenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28C2FFF327CF594B00F4D6D2 /* WindowOpenViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		28C2FF5727913ACD00F4D6D2 /* QR-Code_Objectjve-C.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR-Code_Objectjve-C.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		28C2FF5727913ACD00F4D6D2 /* iOS_hybrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_hybrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28C2FF5A27913ACD00F4D6D2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		28C2FF5B27913ACD00F4D6D2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		28C2FF5D27913ACD00F4D6D2 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		28C2FF4E27913ACD00F4D6D2 = {
 			isa = PBXGroup;
 			children = (
-				28C2FF5927913ACD00F4D6D2 /* QR-Code-Objective-C */,
+				28C2FF5927913ACD00F4D6D2 /* iOS_hybrid */,
 				28C2FF5827913ACD00F4D6D2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,12 +65,12 @@
 		28C2FF5827913ACD00F4D6D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				28C2FF5727913ACD00F4D6D2 /* QR-Code_Objectjve-C.app */,
+				28C2FF5727913ACD00F4D6D2 /* iOS_hybrid.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		28C2FF5927913ACD00F4D6D2 /* QR-Code-Objective-C */ = {
+		28C2FF5927913ACD00F4D6D2 /* iOS_hybrid */ = {
 			isa = PBXGroup;
 			children = (
 				28C2FF9027B506D900F4D6D2 /* www */,
@@ -87,8 +87,7 @@
 				28C2FF6327913ACD00F4D6D2 /* Main.storyboard */,
 				28C2FFA027BCC32A00F4D6D2 /* ViewClass */,
 			);
-			name = "QR-Code-Objective-C";
-			path = "QR-Code_Objectjve-C";
+			path = iOS_hybrid;
 			sourceTree = "<group>";
 		};
 		28C2FFA027BCC32A00F4D6D2 /* ViewClass */ = {
@@ -107,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		28C2FF5627913ACD00F4D6D2 /* QR-Code_Objectjve-C */ = {
+		28C2FF5627913ACD00F4D6D2 /* iOS_hybrid */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "QR-Code_Objectjve-C" */;
+			buildConfigurationList = 28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "iOS_hybrid" */;
 			buildPhases = (
 				28C2FF5327913ACD00F4D6D2 /* Sources */,
 				28C2FF5427913ACD00F4D6D2 /* Frameworks */,
@@ -119,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = "QR-Code_Objectjve-C";
+			name = iOS_hybrid;
 			productName = horsepia_iOS_new;
-			productReference = 28C2FF5727913ACD00F4D6D2 /* QR-Code_Objectjve-C.app */;
+			productReference = 28C2FF5727913ACD00F4D6D2 /* iOS_hybrid.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +137,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "QR-Code_Objectjve-C" */;
+			buildConfigurationList = 28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "iOS_hybrid" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				28C2FF5627913ACD00F4D6D2 /* QR-Code_Objectjve-C */,
+				28C2FF5627913ACD00F4D6D2 /* iOS_hybrid */,
 			);
 		};
 /* End PBXProject section */
@@ -177,12 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28C2FFA427BCC35500F4D6D2 /* ScanViewController.m in Sources */,
-				28C2FF6227913ACD00F4D6D2 /* ViewController.m in Sources */,
-				28C2FF5C27913ACD00F4D6D2 /* AppDelegate.m in Sources */,
-				28C2FFF427CF594B00F4D6D2 /* WindowOpenViewController.m in Sources */,
-				28C2FF6D27913ACF00F4D6D2 /* main.m in Sources */,
-				28C2FF5F27913ACD00F4D6D2 /* SceneDelegate.m in Sources */,
+				284F0C3A2824F41D00CFAEE3 /* main.m in Sources */,
+				284F0C342824E5AB00CFAEE3 /* AppDelegate.m in Sources */,
+				284F0C352824E5AB00CFAEE3 /* SceneDelegate.m in Sources */,
+				284F0C362824E5AB00CFAEE3 /* ViewController.m in Sources */,
+				284F0C372824E5AB00CFAEE3 /* ScanViewController.m in Sources */,
+				284F0C382824E5AB00CFAEE3 /* WindowOpenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +314,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -329,7 +329,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "QR-Code_Objectjve-C/Info.plist";
+				INFOPLIST_FILE = iOS_hybrid/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 기능을 사용하기 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -341,7 +341,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QR-Code-Objective-C";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOS_hybrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,7 +357,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8V2DPLK895;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "QR-Code_Objectjve-C/Info.plist";
+				INFOPLIST_FILE = iOS_hybrid/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라 기능을 사용하기 위해서는 카메라 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -369,7 +369,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.QR-Code-Objective-C";
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOS_hybrid;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -379,7 +379,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "QR-Code_Objectjve-C" */ = {
+		28C2FF5227913ACD00F4D6D2 /* Build configuration list for PBXProject "iOS_hybrid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28C2FF6E27913ACF00F4D6D2 /* Debug */,
@@ -388,7 +388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "QR-Code_Objectjve-C" */ = {
+		28C2FF7027913ACF00F4D6D2 /* Build configuration list for PBXNativeTarget "iOS_hybrid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				28C2FF7127913ACF00F4D6D2 /* Debug */,
