@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<title> 샘플 테스트 앱</title>
+
+<script type="text/javascript" charset="utf-8">
+
+
+        function init(){
+            //alert("test");
+        }
+
+        function externalBrowser(){
+        	console.log("externalBrowser called");
+//        	var url={"url": "http://10.10.39.179:11001/apAdmin/postTest.jsp"};
+        	var url={"url": "http://m.kra.co.kr/med"};
+
+        }
+
+        function goScanQR(){
+            console.log("goScanQR Start");
+            var data = "test";
+            window.webkit.messageHandlers.goScanQR.postMessage(data);
+        }
+
+    
+    
+        //Scanner Success Callback함수
+        function SuccessScanQR(data){
+            console.log("javascript 통신 성공");
+            console.log("SuccessCallback(data) : " + data);
+            alert("data : " + data);
+        }
+    
+        
+        function alertTest(){
+            alert("테스트 중입니다.");
+        }
+        function confirmTest(){
+            confirm("테스트 하시겠습니까?");
+        }
+      
+        function windowOpenTest(){
+            console.log("window.open Start");
+            //location.href = "https://www.naver.com";
+            var url = "https:/www.google.com";
+            window.open(url);
+        }
+        
+        function openSafari(){
+            console.log("openSafari Start");
+            var url = "https:/www.naver.com";
+            window.webkit.messageHandlers.openSafari.postMessage(url);
+            
+        }
+    
+        function webViewSafari(){
+            console.log("webViewSafari Start");
+            var url = "https://m.kra.co.kr";
+            window.webkit.messageHandlers.webViewSafari.postMessage(url);
+        }
+	</script>
+
+
+</head>
+
+<body onload="init()" background="">
+
+	<div id="_index" data-role="page">
+		<div data-role="header" data-theme="a">
+			<h1>HSJ 샘플 내부페이지 테스트 앱</h1>
+		</div>
+
+		<div data-role="content">
+			<br/>
+            <br/>
+			<button class="btn" onclick="goScanQR()">ScanQR</button>
+            <br/>
+            <button class="btn" onclick="alertTest()">Alert 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="confirmTest()">Confirm 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="windowOpenTest()">window.open 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="openSafari()">openSafari 테스트</button>
+            <br/>
+            <br/>
+            <button class="btn" onclick="webViewSafari()">webViewSafari 테스트</button>
+            <br/>
+		</div>
+
+	</div>
+</body>
+</html>
